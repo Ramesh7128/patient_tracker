@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from medicalapp.views import Patientslist
+from medicalapp.views import index,
 
 
 
@@ -9,5 +9,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'medicalrec.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^$', Patientslist.as_view()),
+    url(r'^$', index.as_view()),
+    url(r'^register/', Patientsform.as_view()),
+
 )

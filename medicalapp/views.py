@@ -6,13 +6,17 @@ from medicalapp.models import Doctors, Patients
 from medicalapp.forms import Patientsform, Doctorsform
 import urllib
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
+from django.views.generic.edit import FormView
 
 
 # Create your views here.
-class Patientslist(ListView):
-    model = Patients
+class index(TemplateView):
     template_name = 'medicalapp/index.html'
+
+class Patientsform(FormView):
+    model = Patients
+    template_name = 'medicalapp/patients_appointment.html'
 
 
     # return render_to_response('medicalapp/index.html', context_dict, context)

@@ -12,35 +12,37 @@
         {{ form1.media }}
     </head>
     <body>
-        <form method="post" role="form">
-            {% for field in form1.visible_fields %}
-            <div id="div_{{ field.html_name }}"
-                 class="form-group{% if field.errors %} has-error{% endif %}">
-                {{ field.label_tag }}
-                {{ field }}
-                <div class="text-muted pull-right">
-                    <small>{{ field.help_text }}</small>
-                </div>
-                <div class="help-block">
-                    {{ field.errors }}
-                </div>
-            </div>
-            {% endfor %}
-            {% for hidden in form1.hidden_fields %}
-                {{ hidden }}
-            {% endfor %}
-            {% csrf_token %}
-            <div class="form-group">
-                <input type="submit" value="Submit" class="btn btn-primary" />
-            </div>
-        </form>
+        <a href="/register/">register patients</a>
+        <a href="">Managepatients</a>
+{#        <form method="post" role="form">#}
+{#            {% for field in form1.visible_fields %}#}
+{#            <div id="div_{{ field.html_name }}"#}
+{#                 class="form-group{% if field.errors %} has-error{% endif %}">#}
+{#                {{ field.label_tag }}#}
+{#                {{ field }}#}
+{#                <div class="text-muted pull-right">#}
+{#                    <small>{{ field.help_text }}</small>#}
+{#                </div>#}
+{#                <div class="help-block">#}
+{#                    {{ field.errors }}#}
+{#                </div>#}
+{#            </div>#}
+{#            {% endfor %}#}
+{#            {% for hidden in form1.hidden_fields %}#}
+{#                {{ hidden }}#}
+{#            {% endfor %}#}
+{#            {% csrf_token %}#}
+{#            <div class="form-group">#}
+{#                <input type="submit" value="Submit" class="btn btn-primary" />#}
+{#            </div>#}
+{#        </form>#}
         {% block content %}
-    <h2>Patients</h2>
-    <ul>
-        {% for patient in object_list %}
-            <li>{{ patient.firstname }}</li>
-        {% endfor %}
-    </ul>
+{#    <h2>Patients</h2>#}
+{#    <ul>#}
+{#        {% for patient in object_list %}#}
+{#            <li>{{ patient.firstname }}</li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
 {% endblock %}
     </body>
 </html>
