@@ -34,5 +34,13 @@
                 <input type="submit" value="Submit" class="btn btn-primary" />
             </div>
         </form>
+        {% block content %}
+    <h2>Patients</h2>
+    <ul>
+        {% for patient in object_list %}
+            <li>{{ patient.firstname }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
     </body>
 </html>
